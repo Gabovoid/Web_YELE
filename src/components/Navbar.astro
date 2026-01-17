@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import logo from "../assets/images/Navbar/Logo_webp.webp";
+---
+
+<header class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-[#c0d6df] text-black px-4 sm:px-8 py-2"
+>
+  <a href="/" class="flex items-center gap-2.5">
+    <Image
+      src={logo}
+      alt="Logo"
+      class="h-15 w-25"
+      format="webp"
+    />
+  </a>
+
+  <nav class="hidden lg:block text-1xl font-semibold">
+    <ul class="flex gap-5">
+      <li><a href="/" class="hover:text-gray-800 hover:font-bold">INICIO</a></li>
+      <li><a href="#nosotros" class="hover:text-gray-800 hover:font-bold">NOSOTROS</a></li>
+      <li><a href="#servicios" class="hover:text-gray-800 hover:font-bold">SERVICIOS</a></li>
+      <li><a href="#aliados" class="hover:text-gray-800 hover:font-bold">CLIENTES Y ALIADOS</a></li>
+    </ul>
+  </nav>
+
+  <button>
+    <a href="#contacto" class="inline-flex items-center justify-center border-2 rounded-md px-4 py-2 font-semibold text-black bg-transparent hover:font-bold hover:rounded-md hover:scale-105 transition">
+      CONTÁCTANOS
+    </a>
+  </button>
+</header>

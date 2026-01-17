@@ -1,0 +1,110 @@
+---
+import { Image } from "astro:assets";
+import Nosotros from "../../assets/images/About/about1.webp";
+---
+
+<section class="m-10" id="nosotros">
+    <h1 class="text-3xl font-bold mb-8">¿Quiénes somos?</h1>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div
+            class="bg-[#184272] text-white block max-w-sm lg:max-w-none border border-default rounded-md shadow-xs"
+        >
+            <a href="#">
+                <Image
+                    src={Nosotros}
+                    alt="About1"
+                    class="rounded-t-base h-70"
+                    format="webp"
+                />
+            </a>
+
+            <div class="px-6">
+                <a href="#">
+                    <h5
+                        class="mt-6 mb-2 text-2xl font-semibold tracking-tight text-heading"
+                    >
+                        LA FAMILIA YELE
+                    </h5>
+                </a>
+
+                <p class="mb-5 text-body">
+                    En YELE, nos especializamos en desarrollar proyectos
+                    comerciales, industriales y residenciales para los sectores
+                    público y privado, siempre comprometidos con los más altos
+                    estándares de seguridad y calidad. Acompañamos a nuestros
+                    clientes en todas las etapas del proyecto, desde la
+                    planificación y diseño hasta la ejecución y seguimiento,
+                    ofreciendo soluciones ágiles e innovadoras. Nuestro equipo
+                    altamente calificado nos permite anticipar soluciones
+                    óptimas en tiempo, rendimiento y costos, asegurando el éxito
+                    de cada proyecto
+                </p>
+            </div>
+        </div>
+
+        <div class="flex flex-col gap-6 lg:col-span-2">
+            <div
+                class="bg-[#184272] text-white rounded-md border border-default rounded-base shadow-xs p-5"
+            >
+                <h3 class="text-xl font-semibold mb-2">Propósito</h3>
+                <p class="text-body text-sm">
+                    "Impulsar soluciones eficientes que mejoren la vida de
+                    nuestros clientes y contribuyan al desarrollo sostenible de
+                    la industria."
+                </p>
+            </div>
+
+            <div
+                class="bg-[#184272] text-white rounded-md border border-default rounded-base shadow-xs p-5"
+            >
+                <h3 class="text-xl font-semibold mb-2">Misión</h3>
+                <p class="text-body text-sm">
+                    "Ofrecer servicios personalizados de alta calidad, apoyados
+                    en la innovación y la tecnología, con un compromiso
+                    constante de mejora y responsabilidad social."
+                </p>
+            </div>
+
+            <div
+                class="bg-[#184272] text-white rounded-md border border-default rounded-base shadow-xs p-5"
+            >
+                <h3 class="text-xl font-semibold mb-2">Visión</h3>
+                <p class="text-body text-sm">
+                    "Ser líderes en el sector de servicios, reconocidos por
+                    nuestra excelencia y lograr un impacto positivo en nuestros
+                    clientes."
+                </p>
+            </div>
+
+            <div
+                class="bg-[#184272] text-white rounded-md border border-default rounded-base shadow-xs p-5"
+            >
+                <h3 class="text-xl font-semibold mb-4">Valores</h3>
+
+                <ul class="space-y-3 text-body text-sm">
+                    <li>
+                        <strong>Innovación:</strong> Búsqueda constante de nuevas
+                        soluciones para mejorar nuestros servicios.
+                    </li>
+                    <li>
+                        <strong>Calidad:</strong> Garantizamos excelencia en cada
+                        proyecto que desarrollamos.
+                    </li>
+                    <li>
+                        <strong>Eficiencia:</strong> Optimizamos recursos para ofrecer
+                        el mejor resultado en tiempo y costos.
+                    </li>
+                    <li>
+                        <strong>Confianza:</strong> Nuestro profesionalismo y la calidad
+                        de nuestros resultados generan relaciones duraderas.
+                    </li>
+                    <li>
+                        <strong>Responsabilidad Social:</strong> Actuamos de manera
+                        ética y sostenible.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
