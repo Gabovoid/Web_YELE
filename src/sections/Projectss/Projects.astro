@@ -1,0 +1,102 @@
+---
+import { Image } from 'astro:assets';
+import Icon from '../../components/Icon.astro';
+
+import Residencial from '../../assets/images/About/about1.webp';
+import Industrial from '../../assets/images/About/about1.webp';
+import Comercial from '../../assets/images/About/about1.webp';
+
+const projects = [
+  {
+    category: 'Residencial',
+    icon: 'home',
+    title: 'Instalación eléctrica completa',
+    subtitle: 'Vivienda unifamiliar – Lima',
+    image: Residencial,
+  },
+  {
+    category: 'Industrial',
+    icon: 'factory',
+    title: 'Montaje eléctrico en planta',
+    subtitle: 'Planta de producción – Callao',
+    image: Industrial,
+  },
+  {
+    category: 'Comercial',
+    icon: 'building',
+    title: 'Sistema de iluminación LED',
+    subtitle: 'Centro comercial – Arequipa',
+    image: Comercial,
+  },
+];
+---
+
+<section id="proyectos" class="bg-surface py-14">
+  <div class="mx-auto max-w-6xl px-6">
+
+    <!-- Encabezado -->
+    <div class="flex items-end justify-between">
+      <div>
+        <span class="mb-2 block h-0.5 w-9 bg-brand-500"></span>
+
+        <h2 class="text-3xl font-extrabold text-navy-800">
+          Proyectos
+        </h2>
+      </div>
+
+      <a
+        href="#"
+        class="inline-flex items-center gap-2 text-xs font-medium text-navy-800 transition hover:text-brand-500"
+      >
+        Ver todos
+        <Icon name="arrow-right" class="h-4 w-4 text-brand-500" />
+      </a>
+    </div>
+
+    <!-- Cards -->
+    <div class="mt-8 grid gap-8 md:grid-cols-3">
+      {
+        projects.map((p) => (
+          <article class="overflow-hidden rounded-xl bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+
+            <!-- Imagen -->
+            <Image
+              src={p.image}
+              alt={p.title}
+              loading="lazy"
+              class="h-56 w-full object-cover"
+              format="webp"
+            />
+
+            <!-- Contenido -->
+            <div class="p-5">
+
+              <!-- Categoría -->
+              <p class="flex items-center gap-2 text-xs font-medium text-navy-800">
+                <Icon
+                  name={p.icon}
+                  class="h-4 w-4 text-brand-500"
+                  filled
+                />
+                {p.category}
+              </p>
+
+              <!-- Título -->
+              <h3 class="mt-2 text-base font-bold text-navy-800">
+                {p.title}
+              </h3>
+
+              <!-- Ubicación / subtítulo -->
+              <p class="mt-1 text-sm text-slate-500">
+                {p.subtitle}
+              </p>
+
+            </div>
+
+          </article>
+        ))
+      }
+    </div>
+
+  </div>
+</section>

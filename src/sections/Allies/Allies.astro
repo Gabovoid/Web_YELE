@@ -1,0 +1,46 @@
+---
+import Icon from '../../components/Icon.astro';
+
+// Reemplaza `logo` por la ruta del logo de cada aliado (ej. '/images/aliados/empresa.svg').
+// Mientras sea null se muestra un ícono de placeholder.
+const allies: { name: string; logo: string | null }[] = Array.from({ length: 10 }, (_, i) => ({
+  name: `Aliado ${i + 1}`,
+  logo: null,
+}));
+---
+
+<section id="aliados" class="bg-white pb-16 pt-8">
+  <div class="mx-auto max-w-6xl px-6">
+    <h2 class="flex items-center gap-3 text-2xl font-extrabold text-navy-800">
+      <span class="h-0.5 w-9 bg-brand-500"></span> Aliados
+    </h2>
+
+    <ul class="mt-6 flex flex-wrap items-center justify-between gap-4">
+      {
+        allies.map((a) => (
+          <li
+            class="flex h-12 w-12 items-center justify-center overflow-hidden rounded-full bg-slate-200 text-navy-800"
+            title={a.name}
+          >
+            {a.logo ? (
+              <img src={a.logo} alt={a.name} class="h-full w-full object-contain p-2" />
+            ) : (
+              <Icon name="user" class="h-5 w-5" />
+            )}
+          </li>
+        ))
+      }
+    </ul>
+
+    <div class="mt-12 flex justify-center" id="contacto">
+      <a
+        href="https://wa.me/51000000000"
+        target="_blank"
+        rel="noopener"
+        class="inline-flex items-center gap-3 rounded-lg bg-brand-500 px-10 py-3.5 text-[15px] font-semibold text-white shadow-md transition hover:bg-brand-600"
+      >
+        <Icon name="calendar" class="h-5 w-5" /> Agendar visita <Icon name="arrow-right" class="w-4 h-4" />
+      </a>
+    </div>
+  </div>
+</section>

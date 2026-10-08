@@ -1,0 +1,38 @@
+---
+import Icon from '../../components/Icon.astro';
+
+const services = [
+  { icon: 'zap', label: 'Instalaciones eléctricas' },
+  { icon: 'wrench', label: 'Mantenimiento preventivo y correctivo' },
+  { icon: 'panel', label: 'Tableros eléctricos' },
+  { icon: 'lightbulb', label: 'Iluminación LED' },
+  { icon: 'settings', label: 'Proyectos eléctricos' },
+  { icon: 'plug', label: 'Soluciones industriales' },
+];
+---
+
+<section id="servicios" class="bg-white pt-12 pb-6">
+  <div class="mx-auto max-w-6xl px-6">
+    <div class="flex items-center justify-between">
+      <h2 class="flex items-center gap-3 text-2xl font-extrabold text-navy-800">
+        <span class="h-0.5 w-9 bg-brand-500"></span> Servicios
+      </h2>
+      <a href="#" class="inline-flex items-center gap-2 text-xs font-medium text-navy-800 hover:text-brand-500">
+        Ver todos <Icon name="arrow-right" class="w-4 h-4 text-brand-500" />
+      </a>
+    </div>
+
+    <div class="mt-6 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
+      {
+        services.map((s) => (
+          <div class="flex min-h-[110px] flex-col items-center justify-center gap-3 rounded-lg bg-white p-4 text-center shadow-[0_2px_12px_rgba(15,58,102,0.08)] transition hover:-translate-y-0.5 hover:shadow-md">
+            <span class="flex h-12 w-12 items-center justify-center rounded-full bg-brand-50 text-brand-500">
+              <Icon name={s.icon} class="h-5 w-5" />
+            </span>
+            <span class="text-xs font-semibold leading-tight text-navy-800">{s.label}</span>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
